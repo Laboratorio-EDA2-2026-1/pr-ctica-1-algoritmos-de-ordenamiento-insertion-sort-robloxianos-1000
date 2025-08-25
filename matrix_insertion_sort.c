@@ -19,11 +19,38 @@
  * - Puedes escribir funciones auxiliares si lo deseas.
  * - NO cambies la firma de sort_matrix().
  */
+void insertionSort(int arr[], int n) {
+    int i, j, key;
+    for (i = 1; i < n; i++) {
+        key = arr[i];  // Elemento actual a insertar
+        j = i - 1;
+        
+        // Mover elementos mayores que key una posición adelante
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;  // Insertar key en su posición correcta
+    }
+}
 
 void sort_matrix(int **matrix, int n) {
-    // TODO: Implementa aquí el algoritmo.
-    // Necesitarás el método de inserción,
-    // pero recuerda aplicar la regla de mover toda la columna.
+    int i, j,k,m, key;
+    for (m=0; m<3; m++){
+    for (i = 1; i < n; i++) {
+        key = matrix[m][i];  // Elemento actual a insertar
+        j = i - 1;
+        
+        // Mover elementos mayores que key una posición adelante
+        while (j >= 0 && matrix[m][j] > key) {
+            matrix[m][j + 1]= matrix[m][j];
+            j = j - 1;
+        }
+        matrix[m][j + 1] = key;  // Insertar key en su posición correcta
+    }
+    
+    }
+
 }
 
 int main() {
